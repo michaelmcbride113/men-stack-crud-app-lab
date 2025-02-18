@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Show Page</title>
+  </head>
+  <body>
+    <h1><%= cat.name %></h1>
+    <% if(cat.isReadyToPet){ %>
+        <p>This cat is ready to pet!</p>
+    <% } else { %>
+        <p>This cat is not ready to pet!</p>
+    <% } %>
+
+    <form action="/cats/<%=cat._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= cat.name %></button>
+      </form>
+      <a href="/cats/new">Add a new cat</a>
+      <a href="/cats/">Back to cats</a>
+      <a href="/cats/<%= cat._id %>/edit">Edit <%= cat.name %></a>
+  </body>
+</html>

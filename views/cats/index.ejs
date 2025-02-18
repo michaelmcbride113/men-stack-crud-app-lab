@@ -1,0 +1,20 @@
+<!-- views/fruits/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cats Index</title>
+  </head>
+  <body>
+    <h1>All Cats</h1>
+    <ul>
+        <% cats.forEach(cat => { %>
+          <li>
+            <a href="/cats/<%= cat._id %>"> <%= cat.name %> </a>
+          </li>
+        <% }); %>
+      </ul>
+  </body>
+</html>
